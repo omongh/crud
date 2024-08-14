@@ -1,0 +1,99 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .card h1 {
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        .card label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .card input[type="text"],
+        .card input[type="email"] {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .card input[type="submit"] {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .card input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .card a {
+            margin-top: 15px;
+            text-align: center;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        .message {
+            margin-top: 15px;
+            color: #28a745;
+            font-weight: bold;
+        }
+    </style>
+    <title>Create Record</title>
+</head>
+<body>
+    <div class="card">
+        <h1>Create a New Record</h1>
+        <?php if ($message) : ?>
+            <div class="message"><?php echo $message; ?></div>
+        <?php endif; ?>
+        <form action="php/create.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name"><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email"><br>
+            <input type="submit" value="Create">
+        </form>
+        <a href="./php/read.php">View Records</a>
+    </div>
+</body>
+</html>
